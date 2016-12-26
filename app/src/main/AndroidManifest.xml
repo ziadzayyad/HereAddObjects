@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.here.gistec.tilemapservice">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.here.android.maps.appid"
+            android:value="xID3C9olz30vG8JXyB2w"/>
+        <meta-data
+            android:name="com.here.android.maps.apptoken"
+            android:value="znQhupaFOvvIzpan5TUVfw"/>
+        <meta-data
+            android:name="com.here.android.maps.license.key"
+            android:value="NQ8yWAzQsY/AfIF8mEaUQLd6Onbs0wg+9gbcjToioHQ/kwIFOY5uIOrPS7YS0gGlAFuaw/DQ9waGqFi6OMUP6TDnvMYoBRxiBzop33Of06WJQOhtOy5cCpW76KW3dS+8xGgb9xdZNp87WpGY9ZxounO7J7ClHNOmEXLjmL94tC7egWnTJ1Axs3VaDR+SPMqQcAl7bq+VZlv/UB3Val6UGKqKyfFmfcXq2KkZuqRLoex8yahbxXWVmSWITiC37nCGgLk5bQLHcZFclTljV/etgi1yU95iZoj10MefTe7wALpcQzuZGU4CLdVkdtvBdYSUoEtKWKq4qHXxJ9xd7ogkrTTtBZAcnbC431/IvvwHOHLRJ/xIabx+hwy8gQkcgvkrsomGfK7AqZ2koiPoO7Fl6h1s4yt27YciVqTuxFQksSXPZSV70I1RFKcI8RfpG3qL9ISmmCxcjcLzjBYeBpo9eanfsrQvr+fULQQLlhtF5jhRZNPUxvT45ZQtWEpgAaK8Pe5PFkM/QRGQEfneTmJRfuSlfVSGKlr/0URJ6ktopGgPMfES5D2Lgn/Pxt0kLhISGiDydfmRH95NjLZcdsSGYybs0zwJFy/JXLHkSplWkrJs1BW7/vdwbZTrqNIlGyNTTe7lpUUD1j0iv+YCFi6G0JnuJv5wJwu4PK3XNMo5jkM="/>
+        <!--
+             Embed the HERE Map Service.
+            For more information, see the HERE SDK Developer's Guide
+        -->
+        <service
+            android:name="com.here.android.mpa.service.MapService"
+            android:exported="true"
+            android:label="HereMapService"
+            android:process="global.Here.Map.Service.v2">
+            <intent-filter>
+                <action android:name="com.here.android.mpa.service.MapService"></action>
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
